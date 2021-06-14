@@ -1,0 +1,160 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Simulation_SPICE:VSIN V1
+U 1 1 60C6D2D7
+P 1350 1400
+F 0 "V1" H 1480 1491 50  0000 L CNN
+F 1 "VSIN" H 1480 1400 50  0000 L CNN
+F 2 "" H 1350 1400 50  0001 C CNN
+F 3 "~" H 1350 1400 50  0001 C CNN
+F 4 "Y" H 1350 1400 50  0001 L CNN "Spice_Netlist_Enabled"
+F 5 "V" H 1350 1400 50  0001 L CNN "Spice_Primitive"
+F 6 "sin(0 120 60)" H 1480 1309 50  0000 L CNN "Spice_Model"
+	1    1350 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:DIODE D1
+U 1 1 60C825A4
+P 2600 1200
+F 0 "D1" H 2600 935 50  0000 C CNN
+F 1 "DIODE" H 2600 1026 50  0000 C CNN
+F 2 "" H 2600 1200 50  0001 C CNN
+F 3 "~" H 2600 1200 50  0001 C CNN
+	1    2600 1200
+	-1   0    0    1   
+$EndComp
+$Comp
+L pspice:DIODE D2
+U 1 1 60C82C2D
+P 2600 1650
+F 0 "D2" H 2600 1385 50  0000 C CNN
+F 1 "DIODE" H 2600 1476 50  0000 C CNN
+F 2 "" H 2600 1650 50  0001 C CNN
+F 3 "~" H 2600 1650 50  0001 C CNN
+	1    2600 1650
+	-1   0    0    1   
+$EndComp
+$Comp
+L pspice:DIODE D3
+U 1 1 60C83278
+P 3100 1200
+F 0 "D3" H 3100 935 50  0000 C CNN
+F 1 "DIODE" H 3100 1026 50  0000 C CNN
+F 2 "" H 3100 1200 50  0001 C CNN
+F 3 "~" H 3100 1200 50  0001 C CNN
+	1    3100 1200
+	-1   0    0    1   
+$EndComp
+$Comp
+L pspice:DIODE D4
+U 1 1 60C83496
+P 3100 1650
+F 0 "D4" H 3100 1385 50  0000 C CNN
+F 1 "DIODE" H 3100 1476 50  0000 C CNN
+F 2 "" H 3100 1650 50  0001 C CNN
+F 3 "~" H 3100 1650 50  0001 C CNN
+	1    3100 1650
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2900 1200 2850 1200
+Wire Wire Line
+	2800 1650 2850 1650
+Wire Wire Line
+	2850 1650 2850 1850
+Wire Wire Line
+	2850 1850 1350 1850
+Wire Wire Line
+	1350 1850 1350 1600
+Connection ~ 2850 1650
+Wire Wire Line
+	2850 1650 2900 1650
+Wire Wire Line
+	2850 1200 2850 850 
+Wire Wire Line
+	2850 850  1350 850 
+Wire Wire Line
+	1350 850  1350 1200
+Connection ~ 2850 1200
+Wire Wire Line
+	2850 1200 2800 1200
+Wire Wire Line
+	2400 1650 2400 1200
+Wire Wire Line
+	3300 1650 3300 1200
+Wire Wire Line
+	2400 1200 2400 800 
+Connection ~ 2400 1200
+Wire Wire Line
+	3300 1650 3300 1900
+Connection ~ 3300 1650
+$Comp
+L pspice:C C1
+U 1 1 60C87966
+P 3750 1400
+F 0 "C1" H 3928 1446 50  0000 L CNN
+F 1 "220u" H 3928 1355 50  0000 L CNN
+F 2 "" H 3750 1400 50  0001 C CNN
+F 3 "~" H 3750 1400 50  0001 C CNN
+	1    3750 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:R R1
+U 1 1 60C8813C
+P 4250 1400
+F 0 "R1" H 4318 1446 50  0000 L CNN
+F 1 "100" H 4318 1355 50  0000 L CNN
+F 2 "" H 4250 1400 50  0001 C CNN
+F 3 "~" H 4250 1400 50  0001 C CNN
+	1    4250 1400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4250 800  4250 1150
+Wire Wire Line
+	2400 800  3750 800 
+Wire Wire Line
+	4250 1650 4250 1900
+Wire Wire Line
+	3300 1900 3750 1900
+Wire Wire Line
+	3750 1650 3750 1900
+Connection ~ 3750 1900
+Wire Wire Line
+	3750 1900 4250 1900
+Wire Wire Line
+	3750 1150 3750 800 
+Connection ~ 3750 800 
+Wire Wire Line
+	3750 800  4250 800 
+$Comp
+L pspice:0 #GND?
+U 1 1 60C8972B
+P 3300 2150
+F 0 "#GND?" H 3300 2050 50  0001 C CNN
+F 1 "0" H 3300 2239 50  0000 C CNN
+F 2 "" H 3300 2150 50  0001 C CNN
+F 3 "~" H 3300 2150 50  0001 C CNN
+	1    3300 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3300 2150 3300 1900
+Connection ~ 3300 1900
+$EndSCHEMATC
